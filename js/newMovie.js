@@ -12,7 +12,7 @@ let postRequestMovie = {
     body: ""
 }
 
-let activityJson = {
+let movieJson = {
     "movieId": "",
     "name": "",
     "description": "",
@@ -30,14 +30,14 @@ function createMovie(){
     let inpValue5 = document.getElementById('ageReq');
     let inpValue6 = document.getElementById('genre');
 
-    activityJson.name = inpValue1.value;
-    activityJson.description = inpValue2.value;
-    activityJson.playTime = inpValue3.value;
-    activityJson.actors = inpValue4.value;
-    activityJson.ageReq = inpValue5.value;
-    activityJson.genre = inpValue6.value;
+    movieJson.name = inpValue1.value;
+    movieJson.description = inpValue2.value;
+    movieJson.playTime = inpValue3.value;
+    movieJson.actors = inpValue4.value;
+    movieJson.ageReq = inpValue5.value;
+    movieJson.genre = inpValue6.value;
 
-    postRequestMovie.body = JSON.stringify(activityJson)
+    postRequestMovie.body = JSON.stringify(movieJson)
     fetch(saveMovieURL, postRequestMovie).catch((error) => console.log(error));
 }
 
