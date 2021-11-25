@@ -18,21 +18,26 @@
     <input type="text" id="genre" placeholder="Genre">
 </div>
 
-<button id="movieButton" class="show-modal">Create Movie</button>
+<button id="movieButton" class="show-modal">Add movie</button>
 
 
 
 <div class="modal hidden">
-    <h1>Film blev oprettet!</h1>
-    <button class="close-modal">OK</button>
-    <button class="close-modal">Opret flere film</button>
-</div>
-<div class="overlay hidden"></div>
-
-<!--
+    <h1>Movie added!</h1>
+    <a href="../home.html">
+    <button class="close-modal" class="modal-btn">OK</button>
+        <!--
 Dette er en midlertidigt redirect
 Validation af oprettede Film
 -->
+    </a>
+    <a href="new-movie.html">
+    <button class="close-modal" class="modal-btn">Add more movies</button>
+    </a>
+</div>
+<div class="overlay hidden"></div>
+
+
 <script src="../../js/newMovie.js"> </script>
 
 </body>

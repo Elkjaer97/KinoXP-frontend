@@ -19,9 +19,10 @@ body {
 .show-modal { /* Vores Create Knap */
     font-size: 2rem;
     font-weight: 600;
-    padding: 1.75rem 3.5rem;
-    margin: 5rem 2rem;
-    border: none;
+    padding: 10px 20px;
+    /*margin: 5rem 2rem;
+    border: none;*/
+    border: solid black;
     background-color: #fff;
     color: #444;
     border-radius: 10rem;
@@ -29,24 +30,23 @@ body {
 }
 
 .close-modal {
-    position: absolute;
-    top: 1.2rem;
-    right: 2rem;
-    font-size: 5rem;
+    font-size: 2rem;
     color: #333;
+    background-color: #fff;
     cursor: pointer;
-    border: none;
-    background: none;
+    border: solid black;
+    border-radius: 10rem;
+    padding: 10px 20px;
+    left: 50%;
+    align-items: center;
+    flex-direction: row;
+
+
+
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
 
-p {
-    font-size: 1.8rem;
-}
+
 
 /* -------------------------- */
 /* CLASSES TO MAKE MODAL WORK */
@@ -59,12 +59,20 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
+    width: 30%;
+
+
     background-color: white;
-    padding: 6rem;
+    padding: 2rem 1rem;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 10;
+
+}
+
+.modal h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .overlay {
