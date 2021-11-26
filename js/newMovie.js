@@ -2,8 +2,29 @@
 const out = function (...str) {console.log(str)};
 
 //Movie URL save
-
 const saveMovieURL = "http://localhost:8080/movie/save";
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelectorAll('.close-modal');
+const btnOpenModal = document.querySelector('.show-modal');
+console.log(btnCloseModal);
+
+for (let i = 0; i < btnCloseModal.length; i++){
+    console.log(btnCloseModal[i].textContent);
+}
+
+btnOpenModal.addEventListener('click', function (){
+    console.log('Button clicked');
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+});
+
+btnCloseModal.addEventListener('click', function (){
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+})
+
+
 let postRequestMovie = {
     method: "POST",
     headers: {
@@ -42,6 +63,3 @@ function createMovie(){
 }
 
 document.getElementById('movieButton').addEventListener('click', createMovie);
-
-
-
