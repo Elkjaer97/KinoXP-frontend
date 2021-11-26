@@ -31,7 +31,7 @@ function printMovielist(){
         actors.innerHTML = "Actors:";
         description.innerHTML = "Description: ";
         genre.innerHTML = "Genre:";
-        playtime.innerHTML ="play time:";
+        playtime.innerHTML ="Play time:";
 
         const movieName = document.createElement('p');
         const movieAge = document.createElement('p');
@@ -49,11 +49,17 @@ function printMovielist(){
         moviePlaytime.innerHTML = movieKey.playTime;
 
         childAppender.appendChild(name)
+        childAppender.appendChild(movieName)
         childAppender.appendChild(age)
+        childAppender.appendChild(movieAge)
         childAppender.appendChild(actors)
+        childAppender.appendChild(movieActors)
         childAppender.appendChild(description)
+        childAppender.appendChild(movieDecriptoin)
         childAppender.appendChild(genre)
+        childAppender.appendChild(movieGenre)
         childAppender.appendChild(playtime)
+        childAppender.appendChild(moviePlaytime)
 
     }
 }
