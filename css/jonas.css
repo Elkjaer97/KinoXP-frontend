@@ -60,7 +60,8 @@ textarea {
       cursor: pointer;
       float: right;
     justify-content: center;
-    margin: 0;
+    margin-left: 270px;
+    width: 100px;
 }
 
 .show-modal { /* Vores Create Knap */

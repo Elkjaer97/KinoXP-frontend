@@ -61,3 +61,21 @@
     opacity: .4;
     animation: move-clouds-back 200s linear infinite;
 }
+
+.appending{
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: auto;
+    text-align: -moz-right;
+
+    color: white;
+    background: -webkit-linear-gradient(#eee, #D4AF37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+
+    display: block;
+    position: relative;
+}
