@@ -36,17 +36,26 @@ function printMovielist(){
         const movieName = document.createElement('p');
         const movieAge = document.createElement('p');
         const movieActors = document.createElement('p');
-        const movieDecriptoin = document.createElement('p');
+        const movieDescription = document.createElement('p');
         const movieGenre = document.createElement('p');
         const moviePlaytime = document.createElement('p');
-
+        const deleteButton = document.createElement('input')
 
         movieName.innerHTML = movieKey.name;
         movieAge.innerHTML = movieKey.ageReq;
         movieActors.innerHTML = movieKey.actors;
-        movieDecriptoin.innerHTML = movieKey.description;
+        movieDescription.innerHTML = movieKey.description;
         movieGenre.innerHTML = movieKey.genre;
         moviePlaytime.innerHTML = movieKey.playTime;
+
+        deleteButton.type = "button";
+        deleteButton.setAttribute('value',"Delete Movie")
+        deleteButton.onClick = function() {
+            out(" hvaså baby")
+            out(movieKey.movieId)
+            deleteMovie(movieKey.movieId)
+           // location.href = "../movie/show-movie.html"
+        }
 
         childAppender.appendChild(name)
         childAppender.appendChild(movieName)
@@ -55,11 +64,27 @@ function printMovielist(){
         childAppender.appendChild(actors)
         childAppender.appendChild(movieActors)
         childAppender.appendChild(description)
-        childAppender.appendChild(movieDecriptoin)
+        childAppender.appendChild(movieDescription)
         childAppender.appendChild(genre)
         childAppender.appendChild(movieGenre)
         childAppender.appendChild(playtime)
         childAppender.appendChild(moviePlaytime)
+        childAppender.appendChild(deleteButton)
 
     }
+
+}
+async function deleteMovie(id){
+    const URL = "http://localhost:8080/movie/delete/"+id;
+
+
+    const deleteMapObj = {
+        method: "DELETE",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: ""
+    }
+
+    await fetch(URL, deleteMapObj);
 }
