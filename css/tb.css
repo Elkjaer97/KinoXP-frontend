@@ -17,14 +17,24 @@
     width: 100%;
     display: flex;
 }
-/*Primary Background and Text*/
-body{
-    background: linear-gradient(to left bottom, gray, black);
-    height: 100vh;
-    margin: 0;
-}
+
 .mainContent{
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: auto;
+    text-align: -moz-right;
+
     color: white;
+    background: -webkit-linear-gradient(#eee, #D4AF37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+
+    display: block;
+    position: relative;
+
 }
 /*Dropdown menues*/
 .dropdownContent{
