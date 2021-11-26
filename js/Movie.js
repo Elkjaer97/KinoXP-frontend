@@ -13,6 +13,7 @@ function printMovielist(){
 
     for(let key of movieMap.keys()) {
         let movieKey = movieMap.get(key)
+        out(movieKey)
 
         let childAppender = document.createElement("div");
         childAppender.setAttribute("class","appending");
@@ -50,11 +51,11 @@ function printMovielist(){
 
         deleteButton.type = "button";
         deleteButton.setAttribute('value',"Delete Movie")
-        deleteButton.onClick = function() {
+        deleteButton.onclick = function() {
             out(" hvaså baby")
             out(movieKey.movieId)
             deleteMovie(movieKey.movieId)
-           // location.href = "../movie/show-movie.html"
+           location.href = "../movie/show-movie.html"
         }
 
         childAppender.appendChild(name)
