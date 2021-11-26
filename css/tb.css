@@ -1,13 +1,14 @@
+/*HEADER and FOOTER*/
 .goldBarTop{
     background-color: #D4AF37;
-    top: 0%;
+    top: 0;
 }
 .goldBarTop div, .goldBarTop a{
     font-size: 30px;
     margin: auto;
 }
 .goldBarBtm{
-    bottom: 0%;
+    bottom: 0;
     position: absolute;
     background-color: white;
     border-top: solid black 10px;
@@ -16,13 +17,16 @@
     width: 100%;
     display: flex;
 }
+/*Primary Background and Text*/
 body{
     background: linear-gradient(to left bottom, gray, black);
     height: 100vh;
-   /* background: linear-gradient(to left top, gray, black);*/
-    background-color: black;
     margin: 0;
 }
+.mainContent{
+    color: white;
+}
+/*Dropdown menues*/
 .dropdownContent{
     display: none;
     position: absolute;
@@ -42,11 +46,11 @@ body{
     text-decoration: none;
     display: block;
 }
-.mainContent{
-   color: white;
-}
 
-.mySlides {display: none}
+/*Slideshow*/
+.mySlides {
+    display: none
+}
 .slideshow-container{
     position: absolute;
     left: 40%;
