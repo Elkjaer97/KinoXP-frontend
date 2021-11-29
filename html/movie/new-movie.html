@@ -3,47 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/jonas.css">
-    <title>New Movie</title>
+    <title>Add Movie</title>
 </head>
-<header>
-
-</header>
 <body class="body">
-<div class="inputMovie">
-    <div class="left">
+<br>
+<div class="container">
+    <div class="row">
         <label for="name">Movie name</label>
-            <input type="text" id="name" placeholder="Movie name">
+        <input type="text" id="name" placeholder="Movie name">
     </div>
-        <div class="left-2">
-            <label for="description">Description</label>
-                <textarea type="text" id="description" placeholder="Description"></textarea>
-        </div>
-    <div class="left">
+    <div class="row">
+        <label for="description">Description</label>
+        <textarea type="text" id="description" placeholder="Description"></textarea>
+    </div>
+    <div class="row">
         <label for="playtime">Playtime</label>
-            <input type="text" id="playtime" placeholder="Playtime">
+        <input type="text" id="playtime" placeholder="Playtime">
     </div>
-    <div class="left">
+    <div class="row">
         <label for="actors">Actors</label>
-            <input type="text" id="actors" placeholder="Actors">
+        <input type="text" id="actors" placeholder="Actors">
     </div>
-    <div class="left">
+    <div class="row">
         <label for="ageReq">Minimum age</label>
-            <input type="number" id="ageReq" placeholder="Age requirement">
+        <input type="number" id="ageReq" placeholder="Age requirement">
     </div>
-    <div class="left">
+    <div class="row">
         <label for="genre">Genre</label>
-            <input type="text" id="genre" placeholder="Genre">
+        <input type="text" id="genre" placeholder="Genre">
     </div>
-    <br>
     <button id="movieButton" class="show-modal">Add movie</button>
 </div>
-
-
-
-
-
-
-
 
 <div class="modal hidden">
     <h1>Movie added!</h1>
@@ -59,9 +49,14 @@ Validation af oprettede Film
     </a>
 </div>
 <div class="overlay hidden"></div>
-
-
 <script src="../../js/newMovie.js"> </script>
-
 </body>
 </html>
+
+<!----------------------- MANGLER? --------------------
+Mangler:
+Skal vi have H1 tag? Hvor skal det stå og hvordan?
+Modal vinduet mangler styling!
+
+----->
+

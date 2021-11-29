@@ -1,81 +1,75 @@
-html {
-    /*font-size: 62.5%;
-    box-sizing: border-box;
-    font-family: Arial;
-    */
-}
-
-
 body {
     font-family: sans-serif;
-    color: #333;
-    line-height: 1.5;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background: linear-gradient(to top left, #28b487, black);
-    backdrop-filter: blur(100px);
 }
 
-label{
-    display: inline-block;
-    color: white;
-    width: 100px;
-   
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Tager fat i child objekterne og sætter dem centralt */
+    margin-bottom:10px;
+    margin-top: 70px;
+
+
+}
+.row {
+    display: flex;
+    margin: 10px;
+
+}
+
+label {
+    display: flex;
+    width: 140px;
+    text-align: left;
+    padding: 8px;
 }
 
 input {
     width: 400px;
     height: 30px;
-
-}
-.left {
-    float: left;
-    padding: 20px 20px 20px 0;
-    display: inline-block;
-    color: white;
-
+    justify-content: center;
 }
 
 textarea {
-    height: 200px;
-    width: 400px;
-    display: inline-table;
-    
-}
-.inputMovie{
-    padding: 20px;
+    margin: 0px;
+    width: 402px;
+    height: 115px;
+    resize: none;
     display: flex;
-    flex-direction: column;
-    
+    font-family: sans-serif;
 }
+
 #movieButton {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      float: right;
+   /* background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     justify-content: center;
+    width: 200px;
+    margin-left: 170px; */
+
+
+    /*justify-content: center;
     margin-left: 265px;
-    width: 100px;
+    width: 100px; */
 }
 
 .show-modal { /* Vores Create Knap */
-    font-weight: 600;
+   /* font-weight: 600;
     padding: 10px 20px;
     /*margin: 5rem 2rem;
     border: none;*/
-    border: solid black;
+    /*border: solid black;
     background-color: #fff;
     color: #444;
     border-radius: 10rem;
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content: center; */
+    margin-left: 160px;
+    padding: 15px;
 }
 
 .close-modal {
