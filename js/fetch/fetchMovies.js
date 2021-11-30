@@ -15,8 +15,8 @@ async function callGetMovies(){
 
 let movieMap = new Map();
 
-function movieMapper(herroPlsDoYouLikeThisNameJonasOrDoYouDont){
-    herroPlsDoYouLikeThisNameJonasOrDoYouDont.forEach(movie =>{
+function movieMapper(data){
+    data.forEach(movie =>{
         movieMap.set(movie.movieId, movie)
     })
 }
