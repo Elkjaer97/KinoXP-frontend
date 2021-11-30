@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Showing</title>
+</head>
+<body>
+
+<div class="newShowing">
+    <label for="time">Select Time:</label>
+    <input id="time" type="datetime-local">
+
+    <label for="theater">Select Theater:</label>
+    <input id="theater" type="number" min="1" max="2">
+
+    <label for="movieList">Select Movie:</label>
+    <select id="movieList"></select>
+
+    <button id="submitShowing">Submit</button>
+</div>
+
+<div class="currentShowing">
+    <h1>Showing on selected day:</h1>
+    <div id="showings"></div>
+</div>
+
+<script src="../../js/fetch/fetchMovies.js"></script>
+<script src="../../js/newShowing.js"></script>
+</body>
+</html>
