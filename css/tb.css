@@ -1,13 +1,14 @@
+/*HEADER and FOOTER*/
 .goldBarTop{
     background-color: #D4AF37;
-    top: 0%;
+    top: 0;
 }
 .goldBarTop div, .goldBarTop a{
     font-size: 30px;
     margin: auto;
 }
 .goldBarBtm{
-    bottom: 0%;
+    bottom: 0;
     position: absolute;
     background-color: white;
     border-top: solid black 10px;
@@ -16,13 +17,26 @@
     width: 100%;
     display: flex;
 }
-body{
-    background: linear-gradient(to left bottom, gray, black);
-    height: 100vh;
-   /* background: linear-gradient(to left top, gray, black);*/
-    background-color: black;
-    margin: 0;
+
+.mainContent{
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: auto;
+    text-align: -moz-right;
+
+    color: white;
+    background: -webkit-linear-gradient(#eee, #D4AF37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+
+    display: block;
+    position: relative;
+
 }
+/*Dropdown menues*/
 .dropdownContent{
     display: none;
     position: absolute;
@@ -42,6 +56,53 @@ body{
     text-decoration: none;
     display: block;
 }
-.mainContent{
-   color: white;
+
+/*Slideshow*/
+.mySlides {
+    display: none
+}
+.slideshow-container{
+    position: absolute;
+    left: 40%;
+    bottom: 114px;
+}
+.slideshow-container img{
+    max-width: 255px;
+    position: relative;
+    margin: auto;
+}
+.slideshow-right, .slideshow-left {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slideshow-right, .slideshow-left {
+    background-color: rgba(0,0,0,0.8);
+}
+.slideshow-right {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity: .1}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .1}
+    to {opacity: 1}
 }

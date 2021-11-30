@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Home</title>
   <link rel="stylesheet" href="../css/tb.css">
+  <link rel="stylesheet" href="../css/tobias.css">
 </head>
 <body>
 <header>
@@ -32,20 +33,22 @@
   </nav>
 </header>
 
-<div class="mainContent">
-<h1>Welcome to &#60firmanavn></h1>
-<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis cum deserunt doloribus, eaque
+
+<h1 class="mainContent">Welcome to &#60firmanavn></h1>
+<h2 class="mainContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis cum deserunt doloribus, eaque
   facilis hic incidunt ipsa modi nisi, provident quibusdam quidem quis repellat, sed? Facilis minus officiis velit.</h2>
-<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur ipsam modi mollitia placeat quaerat
+<h3 class="mainContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur ipsam modi mollitia placeat quaerat
   suscipit? A aliquam delectus deserunt ducimus eos expedita, inventore mollitia, nobis odio quibusdam, quos velit.</h3>
-</div>
 
-<div class="w3-content w3-display-container">
-  <img class="mySlides" src="../img/007.jpg" style="width:13%" alt="NOPE">
-  <img class="mySlides" src="../img/interstellar.jpg" style="width:13%" alt="NEIN">
 
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+<div class="slideshow-container">
+  <h2 class="mainContent">Most popular movies:</h2>
+  <img class="mySlides fade" src="../img/007.jpg" alt="NOPE">
+  <img class="mySlides fade" src="../img/interstellar.jpg" alt="NEIN">
+  <img class="mySlides fade" src="../img/Dune.jpg" alt="NEIN">
+  <img class="mySlides fade" src="../img/Avengers.jpg" alt="NEIN">
+  <button class="slideshow-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="slideshow-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
 
 
@@ -63,6 +66,11 @@
     et explicabo illo itaque libero minus neque quod, recusandae repudiandae sequi sit vero, vitae
     voluptatibus voluptatum?</p>
 </div>
+
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+
 
 <script src="../js/homeSlideShow.js"></script>
 </body>
