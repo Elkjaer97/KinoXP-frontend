@@ -123,3 +123,11 @@ textarea {
     top: 20px;
     left: 50%;
 }
+
+.row{
+    -webkit-text-fill-color: white;
+}
+
+#name, #description, #playtime, #actors, #ageReq, #genre{
+    -webkit-text-fill-color: black;
+}
