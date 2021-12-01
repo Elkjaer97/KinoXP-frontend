@@ -14,6 +14,8 @@ async function wait4Fetch(){
 
 wait4Fetch();
 
+//det får list over overskrafter og en info knap til film i showMovie HTML køre i loop
+//den for alt ud som ligger i databaen
 function printMovielist() {
 
     for (let key of movieMap.keys()) {
@@ -61,8 +63,8 @@ function printMovielist() {
 
 
 
-
-
+//Når man kligger på show info henter denne metode alt iformationen som ligger ID som vi skal have
+// looper ikke igennem køre kun engang
 function getSpecificMovieInfo(id){
 
     let movieKey = movieMap.get(id)
@@ -116,6 +118,7 @@ function getSpecificMovieInfo(id){
     const editButton = document.createElement('input')
     editButton.type = "button"
     editButton.setAttribute('value', "Edit Movie Information");
+    editButton.setAttribute('class', 'button');
 
     editButton.onclick = function () {
         const editName = document.createElement('input');
