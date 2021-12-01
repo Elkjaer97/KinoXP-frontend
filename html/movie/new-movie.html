@@ -8,56 +8,57 @@
     <link rel="stylesheet" href="../../css/customer.css">
     <title>Add Movie</title>
 </head><body class="body">
-<nav>
-    <div class="goldBarTop">
-        <a href="../home.html">Home</a>
-        <div class="dropdown">Movies
-            <div class="dropdownContent">
-                <a href="new-movie.html">Add Movie</a>
-                <a href="show-movie.html">Show Current Movies</a>
+<header>
+    <nav>
+        <div class="goldBarTop">
+            <a href="../home.html">Home</a>
+            <div class="dropdown">Movies
+                <div class="dropdownContent">
+                    <a href="new-movie.html">Add Movie</a>
+                    <a href="show-movie.html">Show Current Movies</a>
+                </div>
+            </div>
+            <div class="dropdown">Showings
+                <div class="dropdownContent">
+                    <a href="../Showing/new-showing.html">Add Showing</a>
+                </div>
+            </div>
+            <div class="dropdown">Book
+                <div class="dropdownContent">
+                    <a href="../customer/CustomerBooking.html">Book</a>
+                </div>
             </div>
         </div>
-        <div class="dropdown">Book
-            <div class="dropdownContent">
-                <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing.</a>
-                <a href="#">Lorem ipsum dolor sit amet.</a>
-            </div>
         </div>
-        <div class="dropdown">About
-            <div class="dropdownContent">
-                <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing.</a>
-                <a href="#">Lorem ipsum dolor sit amet.</a>
-            </div>
-        </div>
-    </div>
-</nav>
+    </nav>
+</header>
 
 <div class="container">
     <div class="row">
 
         <label for="name">Movie name</label>
 
-        <input type="text" id="name" placeholder="Movie name">
+        <input type="text" id="name" class="inputField" placeholder="Movie name">
     </div>
     <div class="row">
         <label for="description">Description</label>
-        <textarea type="text" id="description" placeholder="Description"></textarea>
+        <textarea type="text" id="description" class="inputField" placeholder="Description"></textarea>
     </div>
     <div class="row">
         <label for="playtime">Playtime</label>
-        <input type="text" id="playtime" placeholder="Playtime">
+        <input type="text" id="playtime" class="inputField" placeholder="Playtime">
     </div>
     <div class="row">
         <label for="actors">Actors</label>
-        <input type="text" id="actors" placeholder="Actors">
+        <input type="text" id="actors" class="inputField" placeholder="Actors">
     </div>
     <div class="row">
         <label for="ageReq">Minimum age</label>
-        <input type="number" id="ageReq" placeholder="Age requirement">
+        <input type="number" id="ageReq" class="inputField" placeholder="Age requirement">
     </div>
     <div class="row">
         <label for="genre">Genre</label>
-        <input type="text" id="genre" placeholder="Genre">
+        <input type="text" id="genre" class="inputField" placeholder="Genre">
     </div>
 
     <button id="movieButton" class="show-modal">Add movie</button>

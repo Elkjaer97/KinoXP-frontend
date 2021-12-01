@@ -1,23 +1,16 @@
-/*HEADER and FOOTER*/
-.goldBarTop{
-    background-color: #D4AF37;
-    top: 0;
-}
-.goldBarTop div, .goldBarTop a{
-    font-size: 30px;
-    margin: auto;
-}
+/*FOOTER*/
 .goldBarBtm{
     bottom: 0;
     position: absolute;
     background-color: white;
     border-top: solid black 10px;
 }
-.goldBarTop, .goldBarBtm{
+.goldBarBtm{
     width: 100%;
     display: flex;
 }
 
+/*Main Text*/
 .mainContent{
     font-size: 20px;
     font-family: 'Lato', sans-serif;
@@ -34,27 +27,6 @@
 
     display: block;
     position: relative;
-
-}
-/*Dropdown menues*/
-.dropdownContent{
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.dropdown:hover .dropdownContent{
-    display: block;
-    border: solid black;
-    background-color: #D4AF37;
-}
-.dropdownContent a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
 }
 
 /*Slideshow*/
