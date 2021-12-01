@@ -32,6 +32,7 @@ function printMovielist() {
 
         const movieName = document.createElement('p');
         const openModalSeeInfoButton = document.createElement('input')
+        openModalSeeInfoButton.setAttribute('class', 'button')
 
 
         movieName.innerHTML = movieKey.name;
@@ -57,10 +58,6 @@ function printMovielist() {
         childAppender.appendChild(openModalSeeInfoButton)
     }
 }
-
-
-
-
 
 function getSpecificMovieInfo(id){
 
@@ -90,8 +87,10 @@ function getSpecificMovieInfo(id){
     const movieDescription = document.createElement('p');
     const movieGenre = document.createElement('p');
     const moviePlaytime = document.createElement('p');
-    const deleteButton = document.createElement('input')
+    const deleteButton= document.createElement('input')
+    deleteButton.setAttribute('class', 'button')
     const closeModalSeeInfoButton = document.createElement('input')
+    closeModalSeeInfoButton.setAttribute('class', 'button')
 
 
     movieName.innerHTML = movieKey.name;
@@ -131,6 +130,7 @@ function getSpecificMovieInfo(id){
         const submitButton = document.createElement('input');
         submitButton.type = 'button';
         submitButton.setAttribute('value', "Submit Changes");
+        submitButton.setAttribute('class', 'button');
 
         movieName.appendChild(editName)
         movieDescription.appendChild(editDescription)
