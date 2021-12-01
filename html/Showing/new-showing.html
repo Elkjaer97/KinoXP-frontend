@@ -6,26 +6,56 @@
     <title>New Showing</title>
 </head>
 <body>
+<header>
+    <nav>
+        <div class="goldBarTop">
+            <a href="../home.html">Home</a>
+            <div class="dropdown">Movies
+                <div class="dropdownContent">
+                    <a href="../movie/new-movie.html">Add Movie</a>
+                    <a href="../movie/show-movie.html">Show Current Movies</a>
+                </div>
+            </div>
+            <div class="dropdown">Showings
+                <div class="dropdownContent">
+                    <a href="new-showing.html">Add Showing</a>
+                </div>
+            </div>
+            <div class="dropdown">Book
+                <div class="dropdownContent">
+                    <a href="../customer/CustomerBooking.html">Book</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<div class="newShowing">
+<div class="row">
     <label for="time">Select Time:</label>
-    <input id="time" type="datetime-local">
+    <input id="time" class="inputField" type="datetime-local">
 
     <label for="theater">Select Theater:</label>
-    <input id="theater" type="number" min="1" max="2">
+    <input id="theater" class="inputField" type="number" min="1" max="2">
 
     <label for="movieList">Select Movie:</label>
-    <select id="movieList"></select>
+    <select id="movieList" class="inputField"></select>
 
     <button id="submitShowing">Submit</button>
 </div>
 
-<div class="currentShowing">
-    <h1>Showing on selected day:</h1>
-    <div id="showings"></div>
+<div class="appending">
+    <h1 id="date-header">Select a day</h1>
+    <div id="selected-showing"></div>
+    <h1>All Showings:</h1>
+    <div id="all-showings"></div>
 </div>
 
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
 <script src="../../js/fetch/fetchMovies.js"></script>
+<script src="../../js/fetch/fetchShowings.js"></script>
 <script src="../../js/newShowing.js"></script>
+<script src="../../js/showing.js"></script>
 </body>
 </html>

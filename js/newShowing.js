@@ -14,9 +14,10 @@ let postRequestShowing = {
 }
 
 let showingJson = {
+    "showingId" : "",
     "date" : "",
     "theater" : "",
-    "movie" : ""
+    "movie" : {}
 }
 
 function createShowing(){
@@ -25,7 +26,9 @@ function createShowing(){
 
     showingJson.date = time.value;
     showingJson.theater = theater.value;
-    showingJson.movie = 2;
+    showingJson.movie = {movieId:movieList.value};
+    out(showingJson.movie);
+    out(typeof showingJson.movie)
 
     postRequestShowing.body = JSON.stringify(showingJson)
     fetch(saveShowingUrl, postRequestShowing).catch((error) => console.log(error));
@@ -36,6 +39,7 @@ function fillDropDown(){
     for(let i of movieMap.keys()){
         const option = document.createElement("option");
         option.innerHTML = movieMap.get(i).name;
+        option.value = movieMap.get(i).movieId;
         movieList.appendChild(option);
     }
 

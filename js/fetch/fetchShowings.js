@@ -10,14 +10,14 @@ async function callGetShowings(){
     await promise.then(createShowingMap);
 }
 
-let ShowingMap = new Map();
+let showingMap = new Map();
 
 function createShowingMap(data){
-    data.forEach(Showing =>{
-        ShowingMap.set(Showing.showingId, Showing)
+    data.forEach(showing =>{
+        showingMap.set(showing.showingId, showing)
     })
 }
 
-async function getAll(){
+async function getAllShowings(){
     await callGetShowings();
 }
