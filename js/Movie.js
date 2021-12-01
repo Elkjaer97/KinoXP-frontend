@@ -43,6 +43,7 @@ function printMovielist() {
             let overlay = document.createElement('div')
             overlay.setAttribute('class', 'overlay hidden')
             overlay.classList.remove('hidden')
+            
             inputWrapper.appendChild(overlay)
 
 
