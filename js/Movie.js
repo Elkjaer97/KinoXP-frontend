@@ -18,7 +18,7 @@ function printMovielist() {
 
     for (let key of movieMap.keys()) {
         let movieKey = movieMap.get(key)
-        out(movieKey)
+
 
         let childAppender = document.createElement("div");
         childAppender.setAttribute("class", "appending");
@@ -58,6 +58,10 @@ function printMovielist() {
         childAppender.appendChild(openModalSeeInfoButton)
     }
 }
+
+
+
+
 
 function getSpecificMovieInfo(id){
 
@@ -184,7 +188,7 @@ async function updateMovie(id, newName, newDescription, newPlayTime, newActors, 
     const URL = "http://localhost:8080/movie/update/"+id;
 
     const updatedMovieJson = {
-        "movieId": "",
+        "movieId": id,
         "name": newName,
         "description": newDescription,
         "playTime": newPlayTime,

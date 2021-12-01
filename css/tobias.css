@@ -62,6 +62,15 @@
     animation: move-clouds-back 200s linear infinite;
 }
 
+
+p {
+    color: red;
+}
+h1 {
+    color: blue;
+    background-color: yellow;
+}
+/*
 .appending{
     font-size: 15px;
     font-family: 'Lato', sans-serif;
@@ -78,5 +87,5 @@
 
     display: block;
     position: relative;
-}
+}*/
 
