@@ -1,11 +1,4 @@
 
-let inputWrapper = document.querySelector(".inputWrapper");
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const closeModalSeeInfoButten = document.querySelectorAll('.close-modal');
-const seeInfoButton = document.querySelector('.show-modal');
-
-
 
 async function wait4Fetch(){
     await getAll();
@@ -22,9 +15,10 @@ function printMovielist() {
         let movieKey = movieMap.get(key)
 
 
-        let childAppender = document.createElement("div");
-        childAppender.setAttribute("class", "appending");
-        inputWrapper.appendChild(childAppender);
+        let childAppender2 = document.createElement("div");
+        childAppender2.setAttribute("class", "appending");
+        inputWrapper.appendChild(childAppender2);
+
 
 
         const name = document.createElement("h1");
@@ -34,30 +28,37 @@ function printMovielist() {
 
         const movieName = document.createElement('p');
         const openModalSeeInfoButton = document.createElement('input')
-        openModalSeeInfoButton.setAttribute('class', 'button')
+        openModalSeeInfoButton.type = "button";
+        openModalSeeInfoButton.setAttribute('class', 'show-modal')
+        openModalSeeInfoButton.setAttribute('value',"See Info")
+
 
 
         movieName.innerHTML = movieKey.name;
 
-
-        openModalSeeInfoButton.type = "button";
         openModalSeeInfoButton.addEventListener('click', function (){
             console.log('Button clicked');
+
             getSpecificMovieInfo(movieKey.movieId);
-            //modal.classList.remove('hidden')
-            //overlay.classList.remove('hidden')
+            let overlay = document.createElement('div')
+            overlay.setAttribute('class', 'overlay hidden')
+            overlay.classList.remove('hidden')
+            inputWrapper.appendChild(overlay)
+
+
+
 
         });
-        openModalSeeInfoButton.setAttribute('value',"See Info")
+/*
         openModalSeeInfoButton.onclick = function() {
-            seeInfo(movieKey.movieId)
+            getSpecificMovieInfo(movieKey.movieId)
             location.href = "../movie/show-movie.html"
         }
+*/
 
-
-        childAppender.appendChild(name)
-        childAppender.appendChild(movieName)
-        childAppender.appendChild(openModalSeeInfoButton)
+        childAppender2.appendChild(name)
+        childAppender2.appendChild(movieName)
+        childAppender2.appendChild(openModalSeeInfoButton)
     }
 }
 
@@ -69,9 +70,13 @@ function getSpecificMovieInfo(id){
 
     let movieKey = movieMap.get(id)
 
+
     let childAppender = document.createElement("div");
-    childAppender.setAttribute("class","appending");
+
+    childAppender.setAttribute("class","modal hidden");
     inputWrapper.appendChild(childAppender);
+    childAppender.classList.remove('hidden')
+
 
     const name = document.createElement("h1");
     const age = document.createElement("h1");
@@ -149,6 +154,9 @@ function getSpecificMovieInfo(id){
 
         submitButton.onclick = function () {
 
+
+
+
             updateMovie(movieKey.movieId, editName.value, editDescription.value, editPlayTime.value, editActors.value, editAgeReq.value, editGenre.value)
             location.href = "../movie/show-movie.html"
         }
@@ -183,6 +191,7 @@ function getSpecificMovieInfo(id){
     childAppender.appendChild(deleteButton)
     childAppender.appendChild(editButton)
     childAppender.appendChild(closeModalSeeInfoButton)
+
 
 }
 
