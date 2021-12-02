@@ -8,13 +8,10 @@ body {
     align-items: center; /* Tager fat i child objekterne og sætter dem centralt */
     margin-bottom:10px;
     margin-top: 70px;
-
-
 }
 .row {
     display: flex;
     margin: 10px;
-
 }
 
 label {

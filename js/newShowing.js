@@ -1,3 +1,4 @@
+
 async function wait4fetch(){
     await getAll();
     fillDropDown();
@@ -26,7 +27,7 @@ function createShowing(){
 
     showingJson.date = time.value;
     showingJson.theater = theater.value;
-    showingJson.movie = {movieId:movieList.value};
+    showingJson.movie = {movieId:movieList.value}; // hvad betyder det TB
     out(showingJson.movie);
     out(typeof showingJson.movie)
 
@@ -44,5 +45,23 @@ function fillDropDown(){
     }
 
 }
-const showingBtn = document.getElementById("submitShowing");
-showingBtn.addEventListener("click",createShowing);
+/*const showingBtn = document.getElementById("submitShowing");
+showingBtn.addEventListener("click",createShowing);*/
+
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelectorAll(".close-modal");
+const btnOpenModal = document.querySelector('.show-modal');
+
+btnOpenModal.addEventListener('click', function (){
+    console.log('Button Clicked');
+    createShowing();
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+});
+
+btnCloseModal.addEventListener('click', function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+});
+

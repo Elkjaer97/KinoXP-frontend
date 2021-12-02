@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/modaln.css">
     <title>New Showing</title>
 </head>
 <body>
@@ -29,18 +30,17 @@
         </div>
     </nav>
 </header>
+<div class="container">
+    <div class="row">
+        <label for="time">Select Time:</label>
+        <input id="time" class="inputField" type="datetime-local">
+        <label for="theater">Select Theater:</label>
+        <input id="theater" class="inputField" type="number" min="1" max="2">
+        <label for="movieList">Select Movie:</label>
+        <select id="movieList" class="inputField"></select>
+        <button id="submitShowing" class="show-modal">Submit</button>
+    </div>
 
-<div class="row">
-    <label for="time">Select Time:</label>
-    <input id="time" class="inputField" type="datetime-local">
-
-    <label for="theater">Select Theater:</label>
-    <input id="theater" class="inputField" type="number" min="1" max="2">
-
-    <label for="movieList">Select Movie:</label>
-    <select id="movieList" class="inputField"></select>
-
-    <button id="submitShowing">Submit</button>
 </div>
 
 <div class="appending">
@@ -50,12 +50,25 @@
     <div id="all-showings"></div>
 </div>
 
-<div class="stars"></div>
-<div class="twinkling"></div>
-<div class="clouds"></div>
+<div class="modal hidden">
+    <h1>Show added!</h1>
+    <a href="../showing/new-showing.html">
+        <button class="close-modal" class="modal-btn">OK</button>
+    </a>
+    <a href="../showing/new-showing.html">
+        <button class="close-modal" class="modal-btn">Add more shows</button>
+    </a>
+</div>
+<div class="overlay hidden"></div>
+
 <script src="../../js/fetch/fetchMovies.js"></script>
 <script src="../../js/fetch/fetchShowings.js"></script>
 <script src="../../js/newShowing.js"></script>
 <script src="../../js/showing.js"></script>
+
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+
 </body>
 </html>
