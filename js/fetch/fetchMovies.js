@@ -1,11 +1,5 @@
 const out = (str) => console.log(str);
 let inputWrapper = document.querySelector(".inputWrapper");
-/*const modal = document.querySelector('.modal');
-
-const overlay = document.querySelector('.overlay');
-const btnOpenModal = document.querySelector('.show-modal');
-const btnCloseModal = document.querySelectorAll('.close-modal'); */
-
 
 const getMovieURL =  "http://localhost:8080/movie/get";
 
@@ -30,3 +24,10 @@ function movieMapper(data){
 async function getAll(){
     await callGetMovies();
 }
+
+
+/*const modal = document.querySelector('.modal');
+
+const overlay = document.querySelector('.overlay');
+const btnOpenModal = document.querySelector('.show-modal');
+const btnCloseModal = document.querySelectorAll('.close-modal'); */
