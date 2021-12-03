@@ -27,21 +27,22 @@ function createShowing(){
 
     showingJson.date = time.value;
     showingJson.theater = theater.value;
-    showingJson.movie = {movieId:movieList.value}; // hvad betyder det TB
-    out(showingJson.movie);
-    out(typeof showingJson.movie)
+    showingJson.movie = {movieId:movieList.value}; // hvad betyder det TB //
+
 
     postRequestShowing.body = JSON.stringify(showingJson)
     fetch(saveShowingUrl, postRequestShowing).catch((error) => console.log(error));
 }
 
 const movieList = document.getElementById("movieList")
+
 function fillDropDown(){
     for(let i of movieMap.keys()){
         const option = document.createElement("option");
         option.innerHTML = movieMap.get(i).name;
         option.value = movieMap.get(i).movieId;
         movieList.appendChild(option);
+
     }
 
 }

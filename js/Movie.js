@@ -8,7 +8,8 @@ async function wait4Fetch(){
 wait4Fetch();
 
 //det får list over overskrafter og en info knap til film i showMovie HTML køre i loop
-//den for alt ud som ligger i databaen
+//den for alt ud som ligger i databasen
+
 function printMovielist() {
 
     for (let key of movieMap.keys()) {
@@ -43,7 +44,7 @@ function printMovielist() {
             let overlay = document.createElement('div')
             overlay.setAttribute('class', 'overlay hidden')
             overlay.classList.remove('hidden')
-            
+
             inputWrapper.appendChild(overlay)
 
 
@@ -94,6 +95,7 @@ function getSpecificMovieInfo(id){
     playtime.innerHTML ="Play time:";
 
     const movieName = document.createElement('p');
+    movieName.setAttribute('class', "tester")
     const movieAge = document.createElement('p');
     const movieActors = document.createElement('p');
     const movieDescription = document.createElement('p');
