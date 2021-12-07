@@ -1,3 +1,4 @@
+/*All buttons*/
 .button {
 
     padding: 0.6em 2em;
@@ -46,7 +47,7 @@ button:hover{
     font-size: 30px;
     margin: auto;
 }
-/*Dropdown menues*/
+/*Dropdown menues In Header*/
 .dropdownContent{
     display: none;
     position: absolute;
@@ -77,6 +78,7 @@ button:hover{
     font-family: 'Lato', sans-serif;
 }
 
+/* Titles on Main pages*/
 .titel h1{
     font-size: 36px;
     font-family: 'Lato', sans-serif;
