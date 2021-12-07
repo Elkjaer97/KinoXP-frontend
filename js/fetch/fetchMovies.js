@@ -1,4 +1,3 @@
-const out = (str) => console.log(str);
 let inputWrapper = document.querySelector(".inputWrapper");
 
 const getMovieURL =  "http://localhost:8080/movie/get";

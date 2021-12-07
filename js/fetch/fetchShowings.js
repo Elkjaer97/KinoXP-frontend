@@ -1,5 +1,3 @@
-const out = (str) => console.log(str);
-
 const getShowingURL =  "http://localhost:8080/showing/get";
 
 

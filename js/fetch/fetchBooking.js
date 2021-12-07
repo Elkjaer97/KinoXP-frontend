@@ -1,5 +1,3 @@
-const out = (str) => console.log(str);
-
 const  getBookingURL = "http://localhost:8080/show-book/get"
 
 async function getBookings(){
