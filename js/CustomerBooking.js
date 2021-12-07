@@ -1,12 +1,18 @@
 
+
+// Wait4Fetch henter alle showings & Movies ud af databasen og putter dem ind i maps så vi kan bruge i flere sammenhænge
 async function wait4Fetch(){
     await getAll();
     await getAllShowings();
+
 fillDropDown();
 }
 const saveBookURL = "http://localhost:8080/show-book/save";
 const select = document.getElementById("MovieList");
 const select2 = document.getElementById("showFillList");
+
+
+// fillDropDown udfylder en drop down manu med alle de film der er blevet oprettet så man kan vælge en af dem til den gævne booking
 
 function fillDropDown(){
 
@@ -23,17 +29,17 @@ function fillDropDown(){
 
 
 
-
+// fillShow udfylder en drop down manu med alle de gævne showings så man kan koble showing som er foreign key på bookings på og oprette den i databasen
 function fillShow(){
    select2.innerHTML = ""
     out(select.value)
     out(showingMap)
     for (let i of showingMap.keys()){
-        out('litterally anything else')
+
         if (select.value == showingMap.get(i).movie.movieId ) {
-out('jonas er wow lebbe')
             const option = document.createElement("option")
             option.innerHTML = showingMap.get(i).date;
+            option.value = showingMap.get(i).showingId;
             select2.appendChild(option);
         }
     }
@@ -67,16 +73,18 @@ let bookingJson = {
 
 }
 
+// Opretter Booking i databasen ved hjælp af getMapping i backend
 function createCustomerBooking() {
     let inpValue11 = document.getElementById("customerEmail");
     let inpValue12 = document.getElementById("customerNumber");
     let inpValue13 = document.getElementById("customerMovie");
 
-    console.log(inpValue11);
-    console.log(inpValue11.value);
+
+
     bookingJson.customerEmail = inpValue11.value;
     bookingJson.customerNumber = inpValue12.value;
-    bookingJson.customerMovie = inpValue13.value;
+    console.log(select2.value)
+    bookingJson.showing = {showingId:select2.value}
     postRequestCustomerBooking.body = JSON.stringify(bookingJson)
     fetch(saveBookURL, postRequestCustomerBooking).catch((error) => console.log(error));
 }
