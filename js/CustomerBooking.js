@@ -1,10 +1,7 @@
 
-
-// Wait4Fetch henter alle showings & Movies ud af databasen og putter dem ind i maps så vi kan bruge i flere sammenhænge
 async function wait4Fetch(){
     await getAll();
     await getAllShowings();
-
 fillDropDown();
 }
 const saveBookURL = "http://localhost:8080/show-book/save";
@@ -32,14 +29,14 @@ function fillDropDown(){
 // fillShow udfylder en drop down manu med alle de gævne showings så man kan koble showing som er foreign key på bookings på og oprette den i databasen
 function fillShow(){
    select2.innerHTML = ""
-    out(select.value)
-    out(showingMap)
+    console.log(select.value)
+    console.log(showingMap)
     for (let i of showingMap.keys()){
-
+        out('litterally anything else')
         if (select.value == showingMap.get(i).movie.movieId ) {
+out('jonas er wow lebbe')
             const option = document.createElement("option")
             option.innerHTML = showingMap.get(i).date;
-            option.value = showingMap.get(i).showingId;
             select2.appendChild(option);
         }
     }

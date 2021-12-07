@@ -1,5 +1,4 @@
 'use strict';
-const out = function (...str) {console.log(str)};
 
 //Movie URL save
 const saveMovieURL = "http://localhost:8080/movie/save";

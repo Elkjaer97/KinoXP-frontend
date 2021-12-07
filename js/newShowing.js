@@ -20,7 +20,15 @@ let showingJson = {
     "theater" : "",
     "movie" : {}
 }
+/*
+function preventDoubleShow(){
+    for (let i of showingMap.keys()){
+        if (showingMap.get(i).date.getHours())
 
+    }
+
+}
+*/
 function createShowing(){
     const time = document.getElementById("time");
     const theater = document.getElementById("theater");

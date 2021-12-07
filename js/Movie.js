@@ -118,7 +118,7 @@ function getSpecificMovieInfo(id){
     deleteButton.setAttribute('value',"Delete Movie")
     deleteButton.onclick = function() {
 
-        out(movieKey.movieId)
+        console.log(movieKey.movieId)
         deleteMovie(movieKey.movieId)
         location.href = "../movie/show-movie.html"
     }

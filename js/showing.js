@@ -39,13 +39,15 @@ function printAllShowings(){
     const selectedShowing = document.getElementById("selected-showing");
     const dateHeader = document.getElementById("date-header");
     function printSpecificShowings(){
+        selectedShowing.innerHTML = "";
         for (let key of showingMap.keys()) {
             let showingKey = showingMap.get(key)
             let showingDate = new Date(showingKey.date);
             let selectedDate = new Date(dateInp.value)
 
+            console.log(showingKey.date.get)
+
             if(selectedDate.getDate()===showingDate.getDate()){
-                selectedShowing.innerHTML = "";
                 const timeLabel = document.createElement("h2");
                 const theaterLabel = document.createElement("h2");
 
