@@ -32,11 +32,12 @@ function fillShow(){
     console.log(select.value)
     console.log(showingMap)
     for (let i of showingMap.keys()){
-        out('litterally anything else')
+
         if (select.value == showingMap.get(i).movie.movieId ) {
-out('jonas er wow lebbe')
+
             const option = document.createElement("option")
             option.innerHTML = showingMap.get(i).date;
+            option.value = showingMap.get(i).showingId;
             select2.appendChild(option);
         }
     }

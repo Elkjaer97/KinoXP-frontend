@@ -45,8 +45,6 @@ function printAllShowings(){
             let showingDate = new Date(showingKey.date);
             let selectedDate = new Date(dateInp.value)
 
-            console.log(showingKey.date.get)
-
             if(selectedDate.getDate()===showingDate.getDate()){
                 const timeLabel = document.createElement("h2");
                 const theaterLabel = document.createElement("h2");

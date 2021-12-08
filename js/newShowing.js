@@ -1,9 +1,11 @@
-
 async function wait4fetch(){
     await getAll();
     fillDropDown();
 }
 wait4fetch();
+
+const time = document.getElementById("time");
+const theater = document.getElementById("theater");
 const saveShowingUrl = "http://localhost:8080/showing/save";
 
 let postRequestShowing = {
@@ -20,26 +22,37 @@ let showingJson = {
     "theater" : "",
     "movie" : {}
 }
-/*
+
 function preventDoubleShow(){
-    for (let i of showingMap.keys()){
-        if (showingMap.get(i).date.getHours())
+
 
     }
 
-}
-*/
-function createShowing(){
-    const time = document.getElementById("time");
-    const theater = document.getElementById("theater");
-
-    showingJson.date = time.value;
-    showingJson.theater = theater.value;
-    showingJson.movie = {movieId:movieList.value}; // hvad betyder det TB //
 
 
-    postRequestShowing.body = JSON.stringify(showingJson)
-    fetch(saveShowingUrl, postRequestShowing).catch((error) => console.log(error));
+function createShowing() {
+
+
+
+   /* let selectedDate = new Date(time.value);
+    for (let i of showingMap.keys()) {
+        let showingDate = new Date(showingMap.get(i).date);
+
+        if (showingDate.getHours() !== selectedDate.getHours()) {*/
+            console.log("YES")
+            showingJson.date = time.value;
+            showingJson.theater = theater.value;
+            showingJson.movie = {movieId: movieList.value}; // hvad betyder det TB //
+
+
+            postRequestShowing.body = JSON.stringify(showingJson)
+            fetch(saveShowingUrl, postRequestShowing).catch((error) => console.log(error));
+
+        /*}
+        else {
+            console.log("NO")
+        }
+    }*/
 }
 
 const movieList = document.getElementById("movieList")
