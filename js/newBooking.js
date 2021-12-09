@@ -65,6 +65,7 @@ let postRequestCustomerBooking = {
 }
 
 let bookingJson = {
+    "bookId": "",
     "customerEmail": "",
     "customerNumber": "",
     "showing" : {}

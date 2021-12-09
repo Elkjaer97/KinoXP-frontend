@@ -1,11 +1,14 @@
 
 
 async function wait4Fetch(){
+    await getAll();
+    await getAllShowings()
     await getAllBookings();
-    printBookingList();
+    await printBookingList();
 }
 
 wait4Fetch();
+
 
 function printBookingList(){
     for (let key of bookingMap.keys()){
@@ -17,29 +20,51 @@ function printBookingList(){
 
 
         //Overskrift
-        const movieName = document.createElement("h1");
-        movieName.innerHTML = "Movie Name: ";
+        const bookingNummer = document.createElement("h1");
+        bookingNummer.innerHTML = "Booking nummer: ";
 
         //Info omkring filmnavnet
-        const movie = document.createElement("p");
-        movie.innerHTML = bookingKey.name;
+        const bookingId = document.createElement("p");
+        bookingId.innerHTML = bookingKey.bookId;
 
-        const dateTime = document.createElement("h1");
-        dateTime.innerHTML = "Date and time: ";
+        const email = document.createElement("h1");
+        email.innerHTML = "Email: ";
 
-        const date = document.createElement("p");
-        date.innerHTML =  bookingKey.date;
+        const customerEmail = document.createElement("p");
+        customerEmail.innerHTML =  bookingKey.customerEmail;
 
-        childAppender.appendChild(movieName);
-        childAppender.appendChild(movie);
-        childAppender.appendChild(dateTime);
-        childAppender.appendChild(date);
+
+
+        childAppender.appendChild(bookingNummer);
+        childAppender.appendChild(bookingId);
+        childAppender.appendChild(email);
+        childAppender.appendChild(customerEmail);
+
 
     }
 }
 
 
 
+function printMovie(id){
+
+        let movieKey = movieMap.getKey(id)
+
+        let childAppender = document.createElement('div');
+        childAppender.setAttribute("class", "appending");
+        inputWrapper.appendChild(childAppender);
+
+
+
+        const movie = document.createElement("h1");
+        movie.innerHTML = "Movie: "
+
+        const movieName = document.createElement("p");
+        movieName.innerHTML = movieKey.movieId;
+
+        childAppender.appendChild(movie);
+        childAppender.appendChild(movieName);
+}
 
 
 
