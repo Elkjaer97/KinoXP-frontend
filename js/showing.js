@@ -20,10 +20,10 @@ function printAllShowings(){
         const theaterLabel = document.createElement("h2");
         const movieLabel = document.createElement("h2");
 
-       timeLabel.innerHTML = "Time of show:";
-       endTimeLabel.innerHTML = "End of show:";
-       theaterLabel.innerHTML = "Theater:";
-       movieLabel.innerHTML = "Movie:";
+        timeLabel.innerHTML = "Time of show:";
+        endTimeLabel.innerHTML = "End of show:";
+        theaterLabel.innerHTML = "Theater:";
+         movieLabel.innerHTML = "Movie:";
 
         const time = document.createElement('h3');
         const endTime = document.createElement('h3');
@@ -34,7 +34,7 @@ function printAllShowings(){
         time.innerHTML = showingKey.date;
         endTime.innerHTML = showingKey.endDate;
         theater.innerHTML = showingKey.theater;
-        movie.innerHTML = showingKey.theater;
+        movie.innerHTML = showingKey.movie.name;
 
         currentShows.appendChild(timeLabel);
         currentShows.appendChild(time);
@@ -42,6 +42,8 @@ function printAllShowings(){
         currentShows.appendChild(endTime);
         currentShows.appendChild(theaterLabel);
         currentShows.appendChild(theater);
+        currentShows.appendChild(movieLabel);
+        currentShows.appendChild(movie);
     }
 }
 
@@ -54,22 +56,34 @@ function printAllShowings(){
 
             if(selectedDate.getDate()===showingDate.getDate()){
                 const timeLabel = document.createElement("h2");
+                const endTimeLabel = document.createElement("h2");
                 const theaterLabel = document.createElement("h2");
+                const movieLabel = document.createElement("h2");
 
                 timeLabel.innerHTML = "Time of show:";
+                endTimeLabel.innerHTML = "End of show:";
                 theaterLabel.innerHTML = "Theater:";
+                movieLabel.innerHTML = "Movie:";
 
                 const time = document.createElement('h3');
-                const theater = document.createElement('h4');
+                const endTime = document.createElement('h3');
+                const theater = document.createElement('h3');
+                const movie = document.createElement('h3');
 
 
                 time.innerHTML = showingKey.date;
+                endTime.innerHTML = showingKey.endDate;
                 theater.innerHTML = showingKey.theater;
+                movie.innerHTML = showingKey.movie.name;
 
-                selectedShowing.appendChild(timeLabel);
-                selectedShowing.appendChild(time);
-                selectedShowing.appendChild(theaterLabel);
-                selectedShowing.appendChild(theater);
+                currentShows.appendChild(timeLabel);
+                currentShows.appendChild(time);
+                currentShows.appendChild(endTimeLabel);
+                currentShows.appendChild(endTime);
+                currentShows.appendChild(theaterLabel);
+                currentShows.appendChild(theater);
+                currentShows.appendChild(movieLabel);
+                currentShows.appendChild(movie);
             }
         }
 
