@@ -20,12 +20,8 @@ function printMovielist() {
         childAppender2.setAttribute("class", "appending");
         inputWrapper.appendChild(childAppender2);
 
-
-
         const name = document.createElement("h1");
-
         name.innerHTML = "Movie name:";
-
 
         const movieName = document.createElement('p');
         const openModalSeeInfoButton = document.createElement('input')
@@ -35,7 +31,7 @@ function printMovielist() {
 
 
 
-        movieName.innerHTML = movieKey.name;
+        movieName.innerHTML = movieKey.name; //?
 
         openModalSeeInfoButton.addEventListener('click', function (){
             console.log('Button clicked');
@@ -131,14 +127,19 @@ function getSpecificMovieInfo(id){
     editButton.onclick = function () {
         const editName = document.createElement('input');
         editName.setAttribute('value', movieKey.name);
+
         const editDescription = document.createElement('input');
         editDescription.setAttribute('value', movieKey.description);
+
         const editPlayTime = document.createElement('input');
         editPlayTime.setAttribute('value', movieKey.playTime);
+
         const editActors = document.createElement('input');
         editActors.setAttribute('value', movieKey.ageReq);
+
         const editAgeReq = document.createElement('input');
         editAgeReq.setAttribute('value', movieKey.ageReq);
+
         const editGenre = document.createElement('input');
         editGenre.setAttribute('value', movieKey.genre);
 
@@ -147,7 +148,6 @@ function getSpecificMovieInfo(id){
         submitButton.setAttribute('value', "Submit Changes");
         submitButton.setAttribute('class', 'button');
 
-        movieName.appendChild(editName)
         movieDescription.appendChild(editDescription)
         moviePlaytime.appendChild(editPlayTime)
         movieActors.appendChild(editActors)

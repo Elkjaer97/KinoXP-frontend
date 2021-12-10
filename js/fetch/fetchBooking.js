@@ -1,4 +1,5 @@
-const  getBookingURL = "http://localhost:8080/show-book/get"
+const  getBookingURL = "http://localhost:8080/booking/get"
+
 
 async function getBookings(){
     return fetch(getBookingURL).then(response => response.json());
@@ -13,6 +14,7 @@ let bookingMap = new Map();
 
 function createBookingMap(data){
     data.forEach(booking =>{
+        console.log(booking.showing.movie);
         bookingMap.set(booking.bookId, booking)
     })
 }

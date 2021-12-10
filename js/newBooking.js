@@ -4,7 +4,7 @@ async function wait4Fetch(){
     await getAllShowings();
 fillDropDown();
 }
-const saveBookURL = "http://localhost:8080/show-book/save";
+const saveBookURL = "http://localhost:8080/booking/save";
 const select = document.getElementById("MovieList");
 const select2 = document.getElementById("showFillList");
 
