@@ -19,53 +19,56 @@ function printBookingList(){
         inputWrapper.appendChild(childAppender);
 
         //Overskrift
-        const bookingNummer = document.createElement("h1");
-        bookingNummer.innerHTML = "Booking nummer: ";
+        const bookIdH1 = document.createElement("h1");
+        bookIdH1.innerHTML = "Booking ID: ";
 
         //Info omkring filmnavnet
         const bookingId = document.createElement("p");
-        bookingId.innerHTML = bookingKey.bookId; //prik dig igennem lorten bitch
+        bookingId.innerHTML = bookingKey.bookId;
+        //prik dig igennem lorten bitch
 
-        const email = document.createElement("h1");
-        email.innerHTML = "Email: ";
+        const emailH1 = document.createElement("h1");
+        emailH1.innerHTML = "Email: "
 
-        const customerEmail = document.createElement("p");
-        customerEmail.innerHTML =  bookingKey.customerEmail;
+        const email = document.createElement("p");
+        email.innerHTML = bookingKey.customerEmail;
 
-        const number = document.createElement("h1");
-        number.innerHTML = "Customer phone number";
+        const phoneNumberH1 = document.createElement("h1");
+        phoneNumberH1.innerHTML = "Phone Number: "
 
-        const customerNumber = document.createElement("p");
-        customerNumber.innerHTML = bookingKey.customerNumber;
+        const phoneNumber = document.createElement("p");
+        phoneNumber.innerHTML = bookingKey.customerNumber;
 
-        const showingId = document.createElement("h1");
-        showingId.innerHTML = bookingKey.showingId;
+
 
         const editButton = document.createElement('input');
         editButton.type = "button";
         editButton.setAttribute('value', 'Edit Booking');
         editButton.setAttribute('class', 'button');
 
-
-        childAppender.appendChild(bookingNummer);
+        childAppender.appendChild(bookIdH1);
         childAppender.appendChild(bookingId);
+        
+        childAppender.appendChild(emailH1);
         childAppender.appendChild(email);
-        childAppender.appendChild(customerEmail);
-        childAppender.appendChild(number);
-        childAppender.appendChild(customerNumber);
-        childAppender.appendChild(showingId);
+        
+        childAppender.appendChild(phoneNumberH1);
+        childAppender.appendChild(phoneNumber);
+
         childAppender.appendChild(editButton);
+
+
 
         editButton.onclick = function () {
 
-            const editBookingId = document.createElement('input');
-            editBookingId.setAttribute('value', bookingKey.bookId);
+            //const editBookingId = document.createElement('input');
+            //editBookingId.setAttribute('value', bookingKey.bookId)
 
             const editEmail = document.createElement('input');
             editEmail.setAttribute('value', bookingKey.customerEmail);
 
-            const editNumber = document.createElement('input');
-            editNumber.setAttribute('value', bookingKey.customerNumber);
+            const editPhoneNumber = document.createElement('input');
+            editPhoneNumber.setAttribute('value', bookingKey.customerNumber);
 
             const submitButton = document.createElement('input');
             submitButton.type = 'button';
@@ -77,14 +80,16 @@ function printBookingList(){
             deleteButton.type = "button";
             deleteButton.setAttribute("value", "Delete Booking");
 
-            bookingNummer.appendChild(editNumber);
+
+
+            //bookingId.appendChild(editBookingId);
             email.appendChild(editEmail);
-            bookingId.appendChild(editBookingId);
+            phoneNumber.appendChild(editPhoneNumber);
             childAppender.appendChild(submitButton);
             childAppender.appendChild(deleteButton);
 
             submitButton.onclick = function () {
-                updateBooking(bookingKey.bookId, editBookingId.value, editEmail.value, editNumber.value);
+                updateBooking(editBookingId.bookId, editBookingId.value, editEmail.value, editPhoneNumber.value);
                 location.href = "../html/booking/show-booking.html"
             }
 
@@ -104,7 +109,7 @@ async function updateBooking(id, newCustomerEmail, newCustomerNumber){
     const URL = "http://localhost:8080/booking/update/" + id;
 
     const updateBookingJson = {
-        "bookId": id,
+        "bookId" : id,
         "customerEmail": newCustomerEmail,
         "customerNumber": newCustomerNumber
     }
