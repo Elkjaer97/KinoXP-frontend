@@ -135,7 +135,8 @@ function getSpecificMovieInfo(id){
         editPlayTime.setAttribute('value', movieKey.playTime);
 
         const editActors = document.createElement('input');
-        editActors.setAttribute('value', movieKey.ageReq);
+        editActors.setAttribute('value', movieKey.actors);
+
 
         const editAgeReq = document.createElement('input');
         editAgeReq.setAttribute('value', movieKey.ageReq);
@@ -156,10 +157,6 @@ function getSpecificMovieInfo(id){
         movieGenre.appendChild(submitButton)
 
         submitButton.onclick = function () {
-
-
-
-
             updateMovie(movieKey.movieId, editName.value, editDescription.value, editPlayTime.value, editActors.value, editAgeReq.value, editGenre.value)
             location.href = "../movie/show-movie.html"
         }
