@@ -1,3 +1,5 @@
+let inputWrapper = document.querySelector(".inputWrapper");
+
 const  getBookingURL = "http://localhost:8080/booking/get"
 
 

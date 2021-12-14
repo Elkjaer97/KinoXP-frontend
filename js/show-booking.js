@@ -2,8 +2,6 @@
 const movieList = document.getElementById("movie-list");
 
 async function wait4Fetch(){
-    await getAll();
-    await getAllShowings()
     await getAllBookings();
     await printBookingList();
 }
