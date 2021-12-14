@@ -1,4 +1,5 @@
 
+const movieList = document.getElementById("movie-list");
 
 async function wait4Fetch(){
     await getAll();
@@ -19,50 +20,68 @@ function printBookingList(){
         inputWrapper.appendChild(childAppender);
 
         //Overskrift
-        const bookIdH1 = document.createElement("h1");
-        bookIdH1.innerHTML = "Booking ID: ";
+        const bookingIdH1 = document.createElement("h1");
+        bookingIdH1.innerHTML = "Booking ID: ";
 
         //Info omkring filmnavnet
         const bookingId = document.createElement("p");
         bookingId.innerHTML = bookingKey.bookId;
-        //prik dig igennem lorten bitch
+        console.log(bookingId);
 
         const emailH1 = document.createElement("h1");
-        emailH1.innerHTML = "Email: "
+        emailH1.innerHTML = "Email: ";
 
         const email = document.createElement("p");
         email.innerHTML = bookingKey.customerEmail;
 
         const phoneNumberH1 = document.createElement("h1");
-        phoneNumberH1.innerHTML = "Phone Number: "
+        phoneNumberH1.innerHTML = "Phone number: ";
 
-        const phoneNumber = document.createElement("p");
+        const phoneNumber = document.createElement('p');
         phoneNumber.innerHTML = bookingKey.customerNumber;
 
+        const openModalSeeInfoButton = document.createElement('input')
+        openModalSeeInfoButton.type = "button";
+        openModalSeeInfoButton.setAttribute('class', 'show-modal')
+        openModalSeeInfoButton.setAttribute('value',"See Info")
+
+        openModalSeeInfoButton.addEventListener('click', function (){
+            console.log('Button clicked');
+
+            getSpecificBookingInfo(bookingKey.bookId);
+            let overlay = document.createElement('div');
+            overlay.setAttribute('class', "overlay hidden");
+            overlay.classList.remove('hidden');
+
+            inputWrapper.appendChild(overlay);
 
 
-        const editButton = document.createElement('input');
+        })
+
+
+        /*const editButton = document.createElement('input');
         editButton.type = "button";
         editButton.setAttribute('value', 'Edit Booking');
         editButton.setAttribute('class', 'button');
+        childAppender.appendChild(editButton);
+        */
 
-        childAppender.appendChild(bookIdH1);
+
+
+        childAppender.appendChild(bookingIdH1);
         childAppender.appendChild(bookingId);
-        
         childAppender.appendChild(emailH1);
         childAppender.appendChild(email);
-        
         childAppender.appendChild(phoneNumberH1);
         childAppender.appendChild(phoneNumber);
-
-        childAppender.appendChild(editButton);
-
+        childAppender.appendChild(openModalSeeInfoButton);
 
 
-        editButton.onclick = function () {
+
+        /*editButton.onclick = function () {
 
             //const editBookingId = document.createElement('input');
-            //editBookingId.setAttribute('value', bookingKey.bookId)
+            //editBookingId.setAttribute('value', bookingKey.bookId);
 
             const editEmail = document.createElement('input');
             editEmail.setAttribute('value', bookingKey.customerEmail);
@@ -80,16 +99,15 @@ function printBookingList(){
             deleteButton.type = "button";
             deleteButton.setAttribute("value", "Delete Booking");
 
-
-
             //bookingId.appendChild(editBookingId);
             email.appendChild(editEmail);
             phoneNumber.appendChild(editPhoneNumber);
+
             childAppender.appendChild(submitButton);
             childAppender.appendChild(deleteButton);
 
             submitButton.onclick = function () {
-                updateBooking(editBookingId.bookId, editBookingId.value, editEmail.value, editPhoneNumber.value);
+                updateBooking(bookingKey.bookId, editBookingId.value, editEmail.value, editPhoneNumber.value);
                 location.href = "../html/booking/show-booking.html"
             }
 
@@ -99,8 +117,112 @@ function printBookingList(){
             }
 
 
-        }
+        }*/
     }
+}
+
+function getSpecificBookingInfo(id){
+
+    let bookingKey = bookingMap.get(id)
+    let childAppender = document.createElement("div");
+
+    childAppender.setAttribute("class", "modal hidden");
+    inputWrapper.appendChild(childAppender);
+    childAppender.classList.remove('hidden');
+
+    const bookingIdH1 = document.createElement("h1");
+    bookingIdH1.innerHTML = "Booking ID:";
+
+    //Info omkring filmnavnet
+    const bookingId = document.createElement("p");
+    bookingId.innerHTML = bookingKey.bookId;
+    console.log(bookingId);
+
+    const emailH1 = document.createElement("h1");
+    emailH1.innerHTML = "Email: ";
+
+    const email = document.createElement("p");
+    email.innerHTML = bookingKey.customerEmail;
+
+    const phoneNumberH1 = document.createElement("h1");
+    phoneNumberH1.innerHTML = "Phone number: ";
+
+    const phoneNumber = document.createElement('p');
+    phoneNumber.innerHTML = bookingKey.customerNumber;
+
+    const movieNameH1 = document.createElement('h1');
+    movieNameH1.innerHTML = "Movie:"
+
+    const movieName = document.createElement('p');
+    movieName.innerHTML = bookingKey.showing.movie.name;
+
+    const selectNewMovie = document.createElement('select')
+    selectNewMovie.setAttribute('type', 'text');
+    selectNewMovie.setAttribute("id", "movie-list");
+
+
+
+    const theaterH1 = document.createElement("h1");
+    theaterH1.innerHTML = "Theater:";
+
+    const theater = document.createElement('p');
+    theater.innerHTML = bookingKey.showing.theater;
+
+    const dateTimeH1 = document.createElement('h1');
+    dateTimeH1.innerHTML = "Date & Time";
+
+    const dateTime = document.createElement('p');
+    dateTime.innerHTML = bookingKey.showing.date;
+
+    const editButton = document.createElement('input');
+    editButton.type = "button";
+    editButton.setAttribute("value", "Edit Booking");
+    editButton.setAttribute("class", 'button');
+
+    editButton.onclick = function () {
+        const movieList = document.getElementById("movieList")
+
+            for(let i of movieMap.keys()){
+                const option = document.createElement("option");
+                option.innerHTML = movieMap.get(i).name;
+                option.value = movieMap.get(i).movieId;
+                movieList.appendChild(option);
+            }
+
+
+
+    }
+
+    childAppender.appendChild(bookingIdH1);
+    childAppender.appendChild(bookingId);
+    childAppender.appendChild(emailH1);
+    childAppender.appendChild(email);
+    childAppender.appendChild(phoneNumberH1);
+    childAppender.appendChild(phoneNumber);
+    childAppender.appendChild(movieNameH1);
+    childAppender.appendChild(movieName);
+    childAppender.appendChild(theaterH1);
+    childAppender.appendChild(theater);
+    childAppender.appendChild(dateTimeH1);
+    childAppender.appendChild(dateTime);
+    childAppender.appendChild(selectNewMovie);
+    childAppender.appendChild(editButton);
+
+
+
+
+
+}
+
+function fillDropDownEditBooking(){
+    for (let i of movieMap.keys()) {
+        const option = document.createElement('option');
+        option.innerHTML = bookingMap.showing.movie.name;
+        option.value = bookingMap.showing.movie.movieId;
+        console.log(option)
+        movieList.appendChild(option);
+    }
+
 }
 
 
@@ -109,7 +231,7 @@ async function updateBooking(id, newCustomerEmail, newCustomerNumber){
     const URL = "http://localhost:8080/booking/update/" + id;
 
     const updateBookingJson = {
-        "bookId" : id,
+        "bookId": id,
         "customerEmail": newCustomerEmail,
         "customerNumber": newCustomerNumber
     }

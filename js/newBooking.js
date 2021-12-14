@@ -9,6 +9,7 @@ const select = document.getElementById("MovieList");
 const select2 = document.getElementById("showFillList");
 
 
+
 // fillDropDown udfylder en drop down manu med alle de film der er blevet oprettet så man kan vælge en af dem til den gævne booking
 
 function fillDropDown(){
