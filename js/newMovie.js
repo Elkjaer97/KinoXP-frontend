@@ -22,7 +22,8 @@ let movieJson = {
     "playTime": "",
     "actors": "",
     "ageReq": "",
-    "genre": ""
+    "genre": "",
+    "price": ""
 }
 
 function createMovie(){
@@ -32,6 +33,7 @@ function createMovie(){
     let inpValue4 = document.getElementById('actors');
     let inpValue5 = document.getElementById('ageReq');
     let inpValue6 = document.getElementById('genre');
+    let inpValue7 = document.getElementById('price');
 
     movieJson.name = inpValue1.value;
     movieJson.description = inpValue2.value;
@@ -39,6 +41,7 @@ function createMovie(){
     movieJson.actors = inpValue4.value;
     movieJson.ageReq = inpValue5.value;
     movieJson.genre = inpValue6.value;
+    movieJson.price = inpValue7.value;
 
     postRequestMovie.body = JSON.stringify(movieJson)
     fetch(saveMovieURL, postRequestMovie).catch((error) => console.log(error));

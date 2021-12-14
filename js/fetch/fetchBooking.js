@@ -23,4 +23,5 @@ function createBookingMap(data){
 
 async function getAllBookings(){
     await callGetBookings();
+
 }
